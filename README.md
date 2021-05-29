@@ -6,6 +6,7 @@ THIS REPO IS AN ARCHIVED REPO FROM OVER 4 YEARS AGO.
 * It is currently **unmaintained**.
 * **Do not expect it to launch or run!**
 * It contains bad coding conventions (both from the addon we used, and our own code)
+* No git history is preserved (for many reasons, but it was too much effort to export this from our private Gitlab instance so I just copied the files)
 
 ## How to set up and compile for server ##
 1. Copy the server.cfg file to the root folder of your server directory.
