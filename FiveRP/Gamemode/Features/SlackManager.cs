@@ -30,7 +30,7 @@ namespace FiveRP.Gamemode.Features
 
         private void OnResourceStart()
         {
-            string slack_url = "https://hooks.slack.com/services/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";
+            string slack_url = "SLACK WEBHOOK";
 
             SlackClient = new SlackClient(slack_url);
         }
