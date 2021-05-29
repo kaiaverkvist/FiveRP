@@ -1,0 +1,25 @@
+<meta>
+    <info name="FiveRP" async="true" author="The FiveRP Developer Team / fiverp.net" type="gamemode" />
+    
+    <script src="FiveRP.dll" type="server" lang="compiled" />
+
+    <script src="Files/Clientside/doormanager.js" type="client" lang="javascript"/>
+    <script src="Files/Clientside/speedometer.js" type="client" lang="javascript"/>
+    <script src="Files/Clientside/menu_library.js" type="client" lang="javascript"/>
+    <script src="Files/Clientside/BlipLibrary.js" type="client" lang="javascript"/>
+    <script src="Files/Clientside/login.js" type="client" lang="javascript"/>
+    <script src="Files/Clientside/moneydisplay.js" type="client" lang="javascript"/>
+    <script src="Files/Clientside/garbage.js" type="client" lang="javascript"/>
+    <script src="Files/Clientside/id_labels.js" type="client" lang="javascript"/>
+    <script src="Files/Clientside/VehicleSpecialActions.js" type="client" lang="javascript"/>
+
+    <script src="Files/Clientside/taxi.js" type="client" lang="javascript"/>
+
+    <file src="Files/Clientside/login/jquery-3.1.0.min.js" />
+    <file src="Files/Clientside/login/login_login.js" />
+    <file src="Files/Clientside/login/login.html" />
+    <file src="Files/Clientside/login/bootstrap.min.css" />
+    <file src="Files/Clientside/login/AdminLTE.min.css" />
+    <file src="Files/Clientside/login/skin-green.min.css" />
+    <file src="Files/Clientside/login/logo.png" />
+</meta>

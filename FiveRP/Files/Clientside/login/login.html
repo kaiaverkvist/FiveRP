@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <script src="jquery-3.1.0.min.js"></script>
+        <script src="login_login.js"></script>
+	    <link rel="stylesheet" href="bootstrap.min.css"/>
+	    <link rel="stylesheet" href="AdminLTE.min.css"/>
+	    <link rel="stylesheet" href="skin-green.min.css"/>
+        <style type="text/css">
+        body {
+            overflow:hidden;
+        }
+        </style>
+    </head>
+    <body style="background-color: transparent;">
+        <div class="login-logo">
+            <img src="logo.png" />
+        </div><!-- /.login-logo -->
+        <div class="login-box">
+	        <div class="login-box-body">
+		        <p class="login-box-msg">Sign in to your account</p>
+		        <form action="https://ucp.fiverp.net/auth/login" method="post">
+			        <div class="form-group has-feedback">
+				        <input type="text" class="form-control" placeholder="Username or Email" id="email" spellcheck="false" autofocus>
+				        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+			        </div>
+			        <div class="form-group has-feedback">
+				        <input type="password" class="form-control" placeholder="Password" id="password">
+				        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+			        </div>
+			        <div class="row">
+				        <div class="col-xs-8">
+				        <p class="text-muted">Create an account at <a href="https://ucp.fiverp.net/">ucp.fiverp.net</a></p>
+				        </div><!-- /.col -->
+				        <div class="col-xs-4">
+					        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+				        </div><!-- /.col -->
+			        </div>
+		        </form>
+	        </div><!-- /.login-box-body -->
+        </div>
+    </body>
+</html>

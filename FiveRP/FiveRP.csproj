@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{99F1E727-42DF-4347-A3AD-A6162C1DE3A7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FiveRP</RootNamespace>
+    <AssemblyName>FiveRP</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GTANetworkServer, Version=0.1.385.714, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\gtanetwork.api.0.1.385.714\lib\GTANetworkServer.exe</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GTANetworkShared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=60c67de1b3b675de, processorArchitecture=MSIL">
+      <HintPath>..\packages\gtanetwork.api.0.1.385.714\lib\GTANetworkShared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Lidgren.Network" Condition=" '$(OS)' != 'Unix' ">
+      <HintPath>$(FIVERP_OUT_DIR)\..\..\Lidgren.Network.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Lidgren.Network" Condition=" '$(OS)' == 'Unix' ">
+      <HintPath>..\..\devops\server_files\Lidgren.Network.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.9\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Gamemode\Features\Admin\AdminCommands\AdminInventoryCommands.cs" />
+    <Compile Include="Gamemode\Features\Customization\PedVariants.cs" />
+    <Compile Include="Gamemode\Features\Customization\VariantsJson.cs" />
+    <Compile Include="Gamemode\Features\Customization\Wardrobe.cs" />
+    <Compile Include="Gamemode\Features\Inventories\PlayerInventory.cs" />
+    <Compile Include="Gamemode\Features\Inventories\PropertyInventory.cs" />
+    <Compile Include="Gamemode\Features\Inventories\VehicleInventory.cs" />
+    <Compile Include="Gamemode\Features\Properties\PropertyCommands.cs" />
+    <Compile Include="Gamemode\Features\Shops\PlasticSurgeryClinics.cs" />
+    <Compile Include="Gamemode\Features\Shops\Barbershops.cs" />
+    <Compile Include="Gamemode\Features\Shops\TattooParlors.cs" />
+    <Compile Include="Gamemode\Features\Vehicles\Dealerships\DealershipVehicle.cs" />
+    <Compile Include="Gamemode\Database\Tables\FiveRPFine.cs" />
+    <Compile Include="Gamemode\Database\Tables\PhoneContact.cs" />
+    <Compile Include="Gamemode\Database\Tables\PhoneMessage.cs" />
+    <Compile Include="Gamemode\Database\Tables\Property.cs" />
+    <Compile Include="Gamemode\Features\Admin\AdminCommands\AdminMoneyCommands.cs" />
+    <Compile Include="Gamemode\Features\Admin\AdminCommands\AdminPlayerManagementCommands.cs" />
+    <Compile Include="Gamemode\Features\Admin\AdminCommands\AdminTeleportCommands.cs" />
+    <Compile Include="Gamemode\Features\Admin\AdminCommands\AdminVehicleCommands.cs" />
+    <Compile Include="Gamemode\Features\Admin\AdminCommands\AdminWeaponCommands.cs" />
+    <Compile Include="Gamemode\Features\Admin\AdminLibrary.cs" />
+    <Compile Include="Gamemode\Features\Admin\DeveloperTools.cs" />
+    <Compile Include="Gamemode\Features\Shops\AmmunationStores.cs" />
+    <Compile Include="Gamemode\Features\BaseRoleplay\HelpCommands.cs" />
+    <Compile Include="Gamemode\Features\BaseRoleplay\Radio.cs" />
+    <Compile Include="Gamemode\Features\Admin\HelpTickets.cs" />
+    <Compile Include="Gamemode\Features\BaseRoleplay\SpecialCommands.cs" />
+    <Compile Include="Gamemode\Features\Shops\ClothingStores.cs" />
+    <Compile Include="Gamemode\Features\DoorManager.cs" />
+    <Compile Include="Gamemode\Features\Emergency\Police\Fines.cs" />
+    <Compile Include="Gamemode\Features\Emergency\Police\Jail\PoliceJail.cs" />
+    <Compile Include="Gamemode\Features\Emergency\Police\MedicCommands.cs" />
+    <Compile Include="Gamemode\Features\Emergency\Police\PoliceCommands.cs" />
+    <Compile Include="Gamemode\Features\Jobs\Job.cs" />
+    <Compile Include="Gamemode\Features\Organizations\OrganizationCommands.cs" />
+    <Compile Include="Gamemode\Features\Emergency\EmergencyCommands.cs" />
+    <Compile Include="Gamemode\Features\Inventories\Inventory.cs" />
+    <Compile Include="Gamemode\Features\Inventories\Item.cs" />
+    <Compile Include="Gamemode\Features\Inventories\ItemsLibrary.cs" />
+    <Compile Include="Gamemode\Features\Inventories\ItemsHandler.cs" />
+    <Compile Include="Gamemode\Features\Inventories\ItemsJson.cs" />
+    <Compile Include="Gamemode\Features\Inventories\ItemCommands.cs" />
+    <Compile Include="Gamemode\Features\Jobs\Fishing.cs" />
+    <Compile Include="Gamemode\Features\Jobs\Taxi.cs" />
+    <Compile Include="Gamemode\Features\Jobs\Trucker.cs" />
+    <Compile Include="Gamemode\Features\Money\MoneyAdmin.cs" />
+    <Compile Include="Gamemode\Features\Money\MoneyCommands.cs" />
+    <Compile Include="Gamemode\Features\Vehicles\VehicleSpecialActions.cs" />
+    <Compile Include="Gamemode\Library\FiveRPExtensions.cs" />
+    <Compile Include="Gamemode\Library\FiveRPScript.cs" />
+    <Compile Include="Gamemode\Library\FunctionLibraries\MoneyLibrary.cs" />
+    <Compile Include="Gamemode\Features\Money\Paychecks.cs" />
+    <Compile Include="Gamemode\Features\Phones\Advertisement.cs" />
+    <Compile Include="Gamemode\Features\Phones\PhoneCommands.cs" />
+    <Compile Include="Gamemode\Features\Properties\Interiors.cs" />
+    <Compile Include="Gamemode\Features\Properties\PropertyAdmin.cs" />
+    <Compile Include="Gamemode\Features\Properties\PropertyHandler.cs" />
+    <Compile Include="Gamemode\Features\Shops\GeneralStores.cs" />
+    <Compile Include="Gamemode\Features\SlackManager.cs" />
+    <Compile Include="Gamemode\Features\TestCommands.cs" />
+    <Compile Include="Gamemode\Features\Vehicles\CarModding.cs" />
+    <Compile Include="Gamemode\Features\Admin\Reports.cs" />
+    <Compile Include="Gamemode\Features\Vehicles\Dealerships\Dealership.cs" />
+    <Compile Include="Gamemode\Features\Vehicles\Dealerships\DealershipCategories.cs" />
+    <Compile Include="Gamemode\Features\Vehicles\VehicleSales.cs" />
+    <Compile Include="Gamemode\Features\Vehicles\VehicleUpgradeKits.cs" />
+    <Compile Include="Gamemode\Features\Weapons\WeaponCommands.cs" />
+    <Compile Include="Gamemode\Features\Weapons\WeaponsJson.cs" />
+    <Compile Include="Gamemode\Features\Weather\WeatherHandler.cs" />
+    <Compile Include="Gamemode\Library\AlertLogging.cs" />
+    <Compile Include="Gamemode\Database\Tables\Alert.cs" />
+    <Compile Include="Gamemode\Library\FunctionLibraries\BlipLibrary.cs" />
+    <Compile Include="Gamemode\Library\FunctionLibraries\ChatLibrary.cs" />
+    <Compile Include="Gamemode\Library\FunctionLibraries\DistanceLibrary.cs" />
+    <Compile Include="Gamemode\Library\FunctionLibraries\Extensions.cs" />
+    <Compile Include="Gamemode\Features\Death.cs" />
+    <Compile Include="Gamemode\Database\Tables\MoneyTransfer.cs" />
+    <Compile Include="Gamemode\Features\Money\Bank.cs" />
+    <Compile Include="Gamemode\Features\Vehicles\Dealerships\CarDealership.cs" />
+    <Compile Include="Gamemode\Features\Jobs\Garbage.cs" />
+    <Compile Include="Gamemode\Library\Config.cs" />
+    <Compile Include="Gamemode\Features\Organizations\OrganizationAdmin.cs" />
+    <Compile Include="Gamemode\Features\Vehicles\VehicleAdmin.cs" />
+    <Compile Include="Gamemode\Features\Animations\AnimationCommands.cs" />
+    <Compile Include="Gamemode\Features\BaseRoleplay\PlayerCommands.cs" />
+    <Compile Include="Gamemode\Database\Database.cs" />
+    <Compile Include="Gamemode\FiveRP.cs" />
+    <Compile Include="Gamemode\Library\Authentication.cs" />
+    <Compile Include="Gamemode\Database\Tables\DisciplinaryAction.cs" />
+    <Compile Include="Gamemode\Database\Tables\Organization.cs" />
+    <Compile Include="Gamemode\Database\Tables\Role.cs" />
+    <Compile Include="Gamemode\Database\Tables\Teleport.cs" />
+    <Compile Include="Gamemode\Database\Tables\User.cs" />
+    <Compile Include="Gamemode\Database\Tables\UserHasRoles.cs" />
+    <Compile Include="Gamemode\Library\FunctionLibraries\MenuLibrary.cs" />
+    <Compile Include="Gamemode\Library\FunctionLibraries\PlayerLibrary.cs" />
+    <Compile Include="Gamemode\Library\FunctionLibraries\PolygonPoint.cs" />
+    <Compile Include="Gamemode\Library\FunctionLibraries\SlackClient.cs" />
+    <Compile Include="Gamemode\Library\FunctionLibraries\Time.cs" />
+    <Compile Include="Gamemode\Features\Account\Account.cs" />
+    <Compile Include="Gamemode\Features\Account\AccountHandler.cs" />
+    <Compile Include="Gamemode\Features\Vehicles\VehicleCommands.cs" />
+    <Compile Include="Gamemode\Database\Tables\FiveRPCharacter.cs" />
+    <Compile Include="Gamemode\Database\Tables\Character.cs" />
+    <Compile Include="Gamemode\Features\Admin\AdminCommands\AdminGenericCommands.cs" />
+    <Compile Include="Gamemode\Features\BaseRoleplay\ChatCommands.cs" />
+    <Compile Include="Gamemode\Database\Tables\FiveRPVehicle.cs" />
+    <Compile Include="Gamemode\Features\Vehicles\Dealerships\DealershipHandler.cs" />
+    <Compile Include="Gamemode\Features\Organizations\OrganizationHandler.cs" />
+    <Compile Include="Gamemode\Features\Teleports\TeleportHandler.cs" />
+    <Compile Include="Gamemode\Library\FunctionLibraries\NamingFunctions.cs" />
+    <Compile Include="Gamemode\Features\Vehicles\VehicleHandler.cs" />
+    <Compile Include="Gamemode\Features\Time\TimeManager.cs" />
+    <Compile Include="Gamemode\Library\FunctionLibraries\TimingLibrary.cs" />
+    <Compile Include="Gamemode\Library\Logging.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="server.cfg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Files\Clientside\BlipLibrary.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Clientside\doormanager.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Clientside\id_labels.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Clientside\menu_library.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Clientside\garbage.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Clientside\login\AdminLTE.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Clientside\login\bootstrap.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Clientside\login\jquery-3.1.0.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Clientside\login\login.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Clientside\login.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Clientside\login\login_login.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Clientside\login\logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Clientside\speedometer.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Clientside\taxi.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Clientside\VehicleSpecialActions.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="meta.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Clientside\moneydisplay.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Clientside\login\skin-green.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent Condition=" '$(OS)' != 'Unix' ">powershell rm -R -Force '$(FIVERP_OUT_DIR)\*' &amp; powershell cp -R '$(TargetDir)\*' '$(FIVERP_OUT_DIR)\'</PostBuildEvent>
+    <PostBuildEvent Condition=" '$(OS)' == 'Unix' ">echo "Nevermind, we'll do it via the bash script!"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
